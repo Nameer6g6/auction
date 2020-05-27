@@ -12,10 +12,10 @@
 
 <%= for bid <- @bids do %>
   <p>
-  <strong><%= bid.inserted_at %></strong>
-  --
-  <%= bid.amount %>
-  for
-  <em><%= link bid.item.title, to: Routes.item_path(@conn, :show, bid.item) %></em>
+    <strong><%= formatted_datetime(bid.inserted_at) %></strong>
+    --
+    <%= integer_to_currency(bid.amount) %>
+    for
+    <em><%= link bid.item.title, to: Routes.item_path(@conn, :show, bid.item) %></em>
   </p>
 <% end %>
