@@ -14,8 +14,7 @@
           <ul>
           </ul>
         </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+        <a href="#" class="logo">
         </a>
       </section>
     </header>
@@ -25,7 +24,7 @@
         Logged in as <%= link @current_user.username, to: Routes.user_path(@conn, :show, @current_user) %>
         | <%= link "Log out", to: Routes.session_path(@conn, :delete), method: :delete %>
       <% else %>
-        <%= link "Login", to: Routes.session_path(@conn, :new) %>
+        | <%= link "Login", to: Routes.session_path(@conn, :new) %>
       <% end %>
     </div>
     <main role="main" class="container">
